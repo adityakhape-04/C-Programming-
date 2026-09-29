@@ -6,7 +6,7 @@ int main()
     double Salary;
 
     printf("Enter Your Name : \n");
-    scanf("%S",Name);
+    scanf("%s",Name);
     printf("Name=%s \n",Name);
 
     printf("Enter Your Address : \n");
