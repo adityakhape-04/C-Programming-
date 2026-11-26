@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str1[200];
+    char str2[100];
+    char copy[100];
+    char reverse[100];
+    int length, i, result;
+    char temp;
+
+    printf("Enter first string: ");
+    scanf(" %99[^\n]", str1);
+
+    printf("Enter second string: ");
+    scanf(" %99[^\n]", str2);
+
+    /* 5.1 Copy operation */
+    strcpy(copy, str1);
+
+    printf("\n5.1 Copy Operation:\n");
+    printf("Copied string = %s\n", copy);
+
+    /* 5.2 Reverse operation */
+    strcpy(reverse, str1);
+
+    length = (int)strlen(reverse);
+
+    for (i = 0; i < length / 2; i++)
+    {
+        temp = reverse[i];
+        reverse[i] = reverse[length - 1 - i];
+        reverse[length - 1 - i] = temp;
+    }
+
+    printf("\n5.2 Reverse Operation:\n");
+    printf("Reverse of first string = %s\n", reverse);
+
+    /* 5.3 Length operation */
+    printf("\n5.3 Length Operation:\n");
+    printf("Length of first string = %zu\n", strlen(str1));
+    printf("Length of second string = %zu\n", strlen(str2));
+
+    /* 5.4 Compare operation */
+    result = strcmp(str1, str2);
+
+    printf("\n5.4 Compare Operation:\n");
+
+    if (result == 0)
+    {
+        printf("Both strings are equal.\n");
+    }
+    else if (result < 0)
+    {
+        printf("First string is smaller than second string.\n");
+    }
+    else
+    {
+        printf("First string is greater than second string.\n");
+    }
+
+    /* 5.5 Concatenate operation */
+    strcat(str1, str2);
+
+    printf("\n5.5 Concatenation Operation:\n");
+    printf("Concatenated string = %s\n", str1);
+
+    return 0;
+}
